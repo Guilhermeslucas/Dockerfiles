@@ -5,7 +5,7 @@ OpenPower Foundation.
 
 Dockerfiles list:
 - Jenkins ppc64le
-- IBM Development Tools - Ubuntu ppc64le (IBM SDK, XL, Advance Toolchain)
+- IBM Development Tools (IBM SDK, XL, Advance Toolchain) - Ubuntu ppc64le 
 
 To build one of these images,go to the directory of the image you want to build and type:
 ```
