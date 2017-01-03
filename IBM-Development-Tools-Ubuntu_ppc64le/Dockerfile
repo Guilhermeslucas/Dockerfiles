@@ -5,12 +5,12 @@ FROM ppc64le/ubuntu:14.04
 MAINTAINER Guilherme Lucas <guilherme.slucas@gmail.com>
 
 RUN apt-get update
-RUN apt-get install wget
+RUN apt-get install -y wget
 RUN wget ftp://ftp.unicamp.br/pub/linuxpatch/toolchain/at/ubuntu/dists/trusty/6976a827.gpg.key
 RUN apt-key add 6976a827.gpg.key
 
 #installing advance toolchain
-echo deb ftp://ftp.unicamp.br/pub/linuxpatch/toolchain/at/ubuntu trusty at9.0 >> /etc/apt/sources.list   
+RUN echo deb ftp://ftp.unicamp.br/pub/linuxpatch/toolchain/at/ubuntu trusty at9.0 >> /etc/apt/sources.list   
 
 RUN apt-get update
 RUN apt-get install -y advance-toolchain-at9.0-runtime
@@ -22,7 +22,7 @@ RUN apt-get install -y advance-toolchain-at9.0-mcore-libs
 RUN wget ftp://public.dhe.ibm.com/software/server/iplsdk/v1.10.0/packages/deb/repo/dists/trusty/B346CA20.gpg.key
 RUN apt-key add B346CA20.gpg.key
 
-RUN echo ftp://public.dhe.ibm.com/software/server/iplsdk/v1.10.0/packages/deb/repo trusty sdk >> /etc/apt/sources.list
+RUN echo deb ftp://public.dhe.ibm.com/software/server/iplsdk/v1.10.0/packages/deb/repo trusty sdk >> /etc/apt/sources.list
 
 RUN apt-get update
 RUN apt-get install -y ibm-sdk-lop
@@ -34,6 +34,6 @@ RUN wget -q http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/ev
 RUN echo "deb http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/eval/ppc64le/ubuntu/ trusty main" | tee /etc/apt/sources.list.d/ibm-xl-compiler-eval.list
 
 RUN apt-get update
-RUN apt-get install xlc.13.1.5
+RUN apt-get install -y xlc.13.1.5
 
 #you can run /opt/ibm/xlC/13.1.5/bin/xlc_configure 
