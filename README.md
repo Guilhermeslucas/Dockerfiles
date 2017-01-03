@@ -9,5 +9,6 @@ Dockerfiles list:
 
 To build one of these images,go to the directory of the image you want to build and type:
 ```
-$ docker build -t "the name you want for the image" .
+$ docker build -t "name you want for the image on owner/tag format" .
 ```
+Note: Don't use uppercase letters for the tag name.
