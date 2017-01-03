@@ -1,3 +1,6 @@
+#Note that this is a Dockerfile for a Jenkins used to build C
+#applications. 
+
 FROM ppc64le/ubuntu:14.04
 MAINTAINER  Guilherme Lucas <guilherme.slucas@gmail.com>
 RUN apt-get update
