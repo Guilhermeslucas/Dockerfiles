@@ -27,3 +27,13 @@ RUN echo ftp://public.dhe.ibm.com/software/server/iplsdk/v1.10.0/packages/deb/re
 RUN apt-get update
 RUN apt-get install -y ibm-sdk-lop
 RUN apt-get install -y ibm-sdk-lop-remote-dependencies
+
+#installing XL comunnity edition
+RUN wget -q http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/eval/ppc64le/ubuntu/public.gpg -O- | apt-key add -
+
+RUN echo "deb http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/eval/ppc64le/ubuntu/ trusty main" | tee /etc/apt/sources.list.d/ibm-xl-compiler-eval.list
+
+RUN apt-get update
+RUN apt-get install xlc.13.1.5
+
+#you can run /opt/ibm/xlC/13.1.5/bin/xlc_configure 
