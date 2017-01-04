@@ -41,3 +41,12 @@ RUN rpm -ivh fdprpro-5.6.3-0.ppc64le.rpm
 RUN rpm -ivh fdpr_wrap-0.1.1-4.ppc64le.rpm
 RUN rpm -ivh ibm-sdk-lop-1.10.0-1.ppc64le.rpm 
 RUN rpm -ivh ibm-sdk-lop-remote-dependencies-1.10.0-1.ppc64le.rpm
+
+
+#installing XL comunitty edition
+RUN wget http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/eval/ppc64le/rhel7/repodata/repomd.xml.key
+RUN rpm --import repomd.xml.key
+RUN wget http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/eval/ppc64le/rhel7/ibm-xl-compiler-eval.repo
+RUN cp ibm-xl-compiler-eval.repo /etc/yum.repos.d/
+RUN yum install xlc.13.1.5 xlc-license-community.13.1.5 --exclude xlc-license-eval.13.1.5
+
