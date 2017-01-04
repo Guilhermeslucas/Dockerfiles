@@ -1,0 +1,9 @@
+# Beginning of configuration file
+[at9.0]
+name=Advance Toolchain Unicamp FTP
+baseurl=ftp://ftp.unicamp.br/pub/linuxpatch/toolchain/at/redhat/Fedora22
+failovermethod=priority
+enabled=1
+gpgcheck=1
+gpgkey=ftp://ftp.unicamp.br/pub/linuxpatch/toolchain/at/redhat/RHEL7/gpg-pubkey-6976a827-5164221b
+# End of configuration file

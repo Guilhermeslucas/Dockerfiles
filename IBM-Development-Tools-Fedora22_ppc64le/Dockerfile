@@ -7,7 +7,13 @@ MAINTAINER Guilherme Lucas <guilherme.slucas@gmail.com>
 RUN dnf check-update
 RUN dnf install -y wget
 
-#TO-DO: install advance toolchain e terminar sdk, ja que advance e depen
+#installing Advance Toolchain
+RUN touch /etc/yum.repos.d/
+COPY at9.0.repo /etc/yum.repos.d/
+RUN yum install -y advance-toolchain-at9.0-runtime
+RUN yum install -y advance-toolchain-at9.0-devel
+RUN yum install -y advance-toolchain-at9.0-perf
+RUN yum install -y advance-toolchain-at9.0-mcore-libs
 
 #installing IBM SDK
 RUN cd
@@ -27,4 +33,3 @@ RUN rpm -ivh pthread-mon-0.5.11-1.ppc64le.rpm
 RUN rpm -ivh fdprpro-5.6.3-0.ppc64le.rpm
 RUN rpm -ivh fdpr_wrap-0.1.1-4.ppc64le.rpm
 
-#ao tentar rodar a instalação do ibm-sdk-lop, da ruim
