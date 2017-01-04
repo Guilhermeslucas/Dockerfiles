@@ -4,16 +4,15 @@
 FROM jcajka/fedora22-ppc64le
 MAINTAINER Guilherme Lucas <guilherme.slucas@gmail.com>
 
-RUN dnf check-update
 RUN dnf install -y wget
 
 #installing Advance Toolchain
 RUN touch /etc/yum.repos.d/
 COPY at9.0.repo /etc/yum.repos.d/
-RUN yum install -y advance-toolchain-at9.0-runtime
-RUN yum install -y advance-toolchain-at9.0-devel
-RUN yum install -y advance-toolchain-at9.0-perf
-RUN yum install -y advance-toolchain-at9.0-mcore-libs
+RUN yum install -y advance-toolchain-at9.0-runtime && yum clean all
+RUN yum install -y advance-toolchain-at9.0-devel && yum clean all
+RUN yum install -y advance-toolchain-at9.0-perf && yum clean all
+RUN yum install -y advance-toolchain-at9.0-mcore-libs && yum clean all
 
 #installing IBM SDK
 RUN cd
