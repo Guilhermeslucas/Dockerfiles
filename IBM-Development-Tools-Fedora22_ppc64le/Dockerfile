@@ -27,9 +27,17 @@ RUN ftp://public.dhe.ibm.com/software/server/iplsdk/v1.10.0/packages/rpm/ibm-sdk
 RUN dnf install -y perl
 RUN dnf install -y kernel-devel
 RUN dnf install -y systemtap
+RUN dnf install -y gtk2
+RUN dnf install -y automake
+RUN dnf install -y libtool
+RUN dnf install -y gettext
+RUN dnf install -y perf
+RUN dnf install -y gdb
+RUN dnf install -y git
 
 #installing rpm packages
 RUN rpm -ivh pthread-mon-0.5.11-1.ppc64le.rpm
 RUN rpm -ivh fdprpro-5.6.3-0.ppc64le.rpm
 RUN rpm -ivh fdpr_wrap-0.1.1-4.ppc64le.rpm
-
+RUN rpm -ivh ibm-sdk-lop-1.10.0-1.ppc64le.rpm 
+RUN rpm -ivh ibm-sdk-lop-remote-dependencies-1.10.0-1.ppc64le.rpm
