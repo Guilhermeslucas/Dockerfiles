@@ -27,3 +27,4 @@ RUN rpm -ivh pthread-mon-0.5.11-1.ppc64le.rpm
 RUN rpm -ivh fdprpro-5.6.3-0.ppc64le.rpm
 RUN rpm -ivh fdpr_wrap-0.1.1-4.ppc64le.rpm
 
+#ao tentar rodar a instalação do ibm-sdk-lop, da ruim
